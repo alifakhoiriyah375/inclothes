@@ -18,6 +18,8 @@ export default function Home() {
       <p style={{ fontSize: "1.2rem", color: "#475569" }}>
         Sistem Informasi Akuntansi Penjualan
       </p>
+
+      {/* Tombol yang sudah diperbaiki linknya */}
       <div style={{ marginTop: "30px" }}>
         <a href="/login" style={{
           padding: "12px 24px",
@@ -25,7 +27,9 @@ export default function Home() {
           color: "white",
           borderRadius: "8px",
           textDecoration: "none",
-          fontWeight: "bold"
+          fontWeight: "bold",
+          cursor: "pointer",
+          display: "inline-block"
         }}>
           Masuk ke Aplikasi
         </a>
