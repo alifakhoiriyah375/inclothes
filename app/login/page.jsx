@@ -1,11 +1,19 @@
 "use client";
 import React from 'react';
+import { useRouter } from "next/navigation"; // 1. Import ini
 
 export default function LoginPage() {
+    const router = useRouter(); // 2. Inisialisasi router
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // 3. Biar halaman nggak nge-refresh
+        // Nanti di sini tempat cek email & password
+        router.push("/pos"); // 4. Pindah ke halaman POS
+    };
+
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4">
             <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-                {/* Islamic Ethics Header */}
                 <div className="bg-emerald-600 p-6 text-white text-center">
                     <h1 className="text-2xl font-bold mb-1">Inclothes POS</h1>
                     <p className="text-emerald-100 text-sm italic">
@@ -19,11 +27,13 @@ export default function LoginPage() {
                         <p className="text-slate-500 text-sm">Silahkan masuk untuk mengelola amanah hari ini</p>
                     </div>
 
-                    <form className="space-y-5">
+                    {/* 5. Tambahkan onSubmit di sini */}
+                    <form className="space-y-5" onSubmit={handleSubmit}>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1">Email / Username</label>
                             <input
                                 type="text"
+                                required
                                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
                                 placeholder="Masukkan email Anda"
                             />
@@ -33,6 +43,7 @@ export default function LoginPage() {
                             <label className="block text-sm font-medium text-slate-700 mb-1">Password</label>
                             <input
                                 type="password"
+                                required
                                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
                                 placeholder="••••••••"
                             />
@@ -54,7 +65,6 @@ export default function LoginPage() {
                         </button>
                     </form>
 
-                    {/* Ethics Reminder Section */}
                     <div className="mt-8 p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg">
                         <h3 className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-1">Pengingat Shiddiq (Kejujuran)</h3>
                         <p className="text-xs text-emerald-700 leading-relaxed">
