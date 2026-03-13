@@ -61,8 +61,8 @@ export default function LoginPage() {
                             type="submit"
                             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-200"
                         >
-                            Masuk (Bismillah)
-                        </a>
+                            MASUK
+                        </button>
                     </form>
 
                     <div className="mt-8 p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg">
