@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRouter } from "next/navigation"; // 1. Import ini
 
-export default function LoginPage() {
+export default function LoginSIA() {
     const router = useRouter(); // 2. Inisialisasi router
 
     const handleSubmit = (e) => {
