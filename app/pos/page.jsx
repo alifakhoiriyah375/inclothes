@@ -10,42 +10,42 @@ export default function POSPage() {
             name: 'Gamis Silk Premium',
             price: 350000,
             color: 'Authentic Madinah',
-            image: 'https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?q=80&w=400' // Gamis Muslimah Elegant
+            image: '/image_5cce2f.png' // Gambar pertama (Gamis Biru Muda)
         },
         {
             id: 2,
             name: 'Koko Kurta Modern',
             price: 225000,
             color: 'Himalayan White',
-            image: 'https://images.unsplash.com/photo-1598032895397-b9472444bf93?q=80&w=400' // Baju Koko/Kurta Pria Muslim
+            image: '/image_5ccec9.png' // Gambar kedua (Koko Putih)
         },
         {
             id: 3,
             name: 'Abaya Jetblack Sharia',
             price: 450000,
             color: 'Deep Black',
-            image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=400' // Abaya Hitam Syar'i
+            image: '/image_5cd1e8.png' // Gambar ketiga (Abaya Hitam)
         },
         {
             id: 4,
             name: 'Pashmina Silk Soft',
             price: 85000,
             color: 'Dusty Rose',
-            image: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?q=80&w=400' // Pashmina/Hijab Silk
+            image: '/image_5cd266.png' // Gambar keempat (Pashmina Hijau Sage)
         },
         {
             id: 5,
             name: 'Mukenah Travel Set',
             price: 150000,
             color: 'Emerald Green',
-            image: 'https://images.unsplash.com/photo-1574246604907-db69e30ddb97?q=80&w=400' // Mukenah / Pakaian Ibadah Putih
+            image: '/image_5cd2e7.png' // Gambar kelima (Mukenah Motif)
         },
         {
             id: 6,
             name: 'Khimar Syar\'i Layer',
             price: 110000,
             color: 'Soft Lavender',
-            image: 'https://images.unsplash.com/photo-1528659101235-9830560946b5?q=80&w=400' // Khimar/Hijab Syar'i
+            image: '/image_5cd5ce.png' // Gambar ketujuh (Khimar Hijau Army)
         },
     ];
 
