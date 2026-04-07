@@ -13,6 +13,16 @@ export default function POSPage() {
         { id: 6, name: 'Khimar Syar\'i Layer', price: 110000, color: 'Soft Lavender', image: '/khimar.png' },
     ];
 
+    // --- FUNGSI TAMBAH KE KERANJANG ---
+    const addToCart = (product) => {
+        setCart([...cart, product]);
+    };
+
+    // --- PERHITUNGAN OTOMATIS (AGAR TIDAK ERROR) ---
+    const subtotal = cart.reduce((total, item) => total + item.price, 0);
+    const zakat = subtotal * 0.025; // Zakat 2.5%
+    const totalHarga = subtotal + zakat;
+
     return (
         <div className="flex h-screen bg-[#F8FAFC]">
             {/* AREA UTAMA */}
@@ -55,9 +65,9 @@ export default function POSPage() {
                         <p className="text-slate-400 italic text-center py-10">Keranjang kosong...</p>
                     ) : (
                         cart.map((item, idx) => (
-                            <div key={idx} className="flex justify-between items-center">
+                            <div key={idx} className="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
                                 <p className="font-bold text-slate-700">{item.name}</p>
-                                <p className="font-bold text-slate-800">Rp {item.price.toLocaleString('id-ID')}</p>
+                                <p className="font-bold text-slate-800 text-sm">Rp {item.price.toLocaleString('id-ID')}</p>
                             </div>
                         ))
                     )}
@@ -74,9 +84,9 @@ export default function POSPage() {
                         </div>
                     </div>
                     <div className="flex justify-between items-end mb-8">
-                        <p className="text-3xl font-black text-slate-900">Rp {(subtotal + zakat).toLocaleString('id-ID')}</p>
+                        <p className="text-3xl font-black text-slate-900">Rp {totalHarga.toLocaleString('id-ID')}</p>
                     </div>
-                    <button className="w-full bg-slate-900 hover:bg-emerald-600 text-white py-5 rounded-3xl font-bold text-lg shadow-2xl transition-all active:scale-95">Selesaikan Transaksi</button>
+                    <button className="w-full bg-slate-900 hover:bg-emerald-600 text-white py-5 rounded-3xl font-bold text-lg shadow-2xl transition-all active:scale-95" onClick={() => { alert('Transaksi Berhasil!'); setCart([]); }}>Selesaikan Transaksi</button>
                 </div>
             </div>
         </div>
