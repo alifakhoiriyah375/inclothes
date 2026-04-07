@@ -10,42 +10,42 @@ export default function POSPage() {
             name: 'Gamis Silk Premium',
             price: 350000,
             color: 'Authentic Madinah',
-            image: 'https://images.unsplash.com/photo-1585218356055-e1bbc5891162?q=80&w=400' // Gambar Gamis/Dress
+            image: 'https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?q=80&w=400' // Gamis Muslimah Elegant
         },
         {
             id: 2,
             name: 'Koko Kurta Modern',
             price: 225000,
             color: 'Himalayan White',
-            image: 'https://images.unsplash.com/photo-1618354691792-d1d42acfd860?q=80&w=400' // Gambar Baju Pria/Kurta
+            image: 'https://images.unsplash.com/photo-1598032895397-b9472444bf93?q=80&w=400' // Baju Koko/Kurta Pria Muslim
         },
         {
             id: 3,
             name: 'Abaya Jetblack Sharia',
             price: 450000,
             color: 'Deep Black',
-            image: 'https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=400' // Gambar Abaya Hitam
+            image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=400' // Abaya Hitam Syar'i
         },
         {
             id: 4,
             name: 'Pashmina Silk Soft',
             price: 85000,
             color: 'Dusty Rose',
-            image: 'https://images.unsplash.com/photo-1618354691229-88d47f285158?q=80&w=400' // Gambar Scarf/Pashmina
+            image: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?q=80&w=400' // Pashmina/Hijab Silk
         },
         {
             id: 5,
             name: 'Mukenah Travel Set',
             price: 150000,
             color: 'Emerald Green',
-            image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400' // Gambar Mukenah/White Dress
+            image: 'https://images.unsplash.com/photo-1574246604907-db69e30ddb97?q=80&w=400' // Mukenah / Pakaian Ibadah Putih
         },
         {
             id: 6,
             name: 'Khimar Syar\'i Layer',
             price: 110000,
             color: 'Soft Lavender',
-            image: 'https://images.unsplash.com/photo-1550995694-3f5f4a7b1bd2?q=80&w=400' // Gambar Hijab
+            image: 'https://images.unsplash.com/photo-1528659101235-9830560946b5?q=80&w=400' // Khimar/Hijab Syar'i
         },
     ];
 
