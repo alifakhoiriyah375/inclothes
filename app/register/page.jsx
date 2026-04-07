@@ -1,51 +1,50 @@
 "use client";
-
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-const Register = () => {
-    const [formData, setFormData] = useState({ businessName: '', email: '', category: 'Halal Food' });
+export default function RegisterPage() {
+    const router = useRouter();
+    const [nama, setNama] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
-        alert(`Registering ${formData.businessName}...`);
+        if (nama && email && password) {
+            alert("Akun Berhasil Dibuat!");
+            router.push('/login');
+        } else {
+            alert("Isi semua datanya dulu ya!");
+        }
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4">
-            <div className="max-w-lg mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-slate-100">
-                <div className="bg-emerald-600 p-6 text-white text-center">
-                    <h3 className="text-xl font-bold">Join the Ethical Marketplace</h3>
-                    <p className="text-emerald-100 text-sm">Register your business in minutes</p>
+        <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4">
+            <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl font-bold text-emerald-600 mb-2">Daftar Akun</h1>
+                    <p className="text-slate-500 text-sm">Silahkan buat akun pembeli kamu</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-8 space-y-5">
-                    <div>
-                        <label className="block text-sm font-semibold text-slate-700">Business Name</label>
-                        <input required type="text" onChange={(e) => setFormData({ ...formData, businessName: e.target.value })} className="w-full mt-1 p-2.5 border border-slate-300 rounded-md focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-semibold text-slate-700">Business Category</label>
-                        <select className="w-full mt-1 p-2.5 border border-slate-300 rounded-md bg-white">
-                            <option>Halal Food & Beverage</option>
-                            <option>Modest Fashion</option>
-                            <option>Islamic Services</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label className="block text-sm font-semibold text-slate-700">Admin Email</label>
-                        <input required type="email" className="w-full mt-1 p-2.5 border border-slate-300 rounded-md outline-none" />
-                    </div>
-                    <div className="flex items-start gap-2 py-2">
-                        <input type="checkbox" required className="mt-1 accent-emerald-600" />
-                        <span className="text-xs text-slate-500">I agree to abide by Sharia-compliant trade principles and fair pricing.</span>
-                    </div>
-                    <button type="submit" className="w-full bg-slate-900 text-white py-3 rounded-md hover:bg-slate-800 transition">
-                        Create Merchant Account
+                <form onSubmit={handleRegister} className="space-y-4">
+                    <input type="text" value={nama} onChange={(e) => setNama(e.target.value)} className="w-full px-4 py-3 rounded-lg border" placeholder="Nama Lengkap" />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-3 rounded-lg border" placeholder="Email" />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-3 rounded-lg border" placeholder="Password" />
+
+                    <button type="submit" className="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg shadow-lg">
+                        Daftar Sekarang
                     </button>
+
+                    <div className="text-center mt-6 pt-4 border-t">
+                        <p className="text-sm text-slate-600">
+                            Sudah punya akun?{' '}
+                            <button type="button" onClick={() => router.push('/login')} className="text-emerald-600 font-bold hover:underline">
+                                Masuk di sini
+                            </button>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
     );
-};
-
-export default Register;
+}

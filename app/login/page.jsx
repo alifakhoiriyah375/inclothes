@@ -1,79 +1,81 @@
 "use client";
-import React from 'react';
-import { useRouter } from "next/navigation"; // 1. Import ini
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-export default function LoginSIA() {
-    const router = useRouter(); // 2. Inisialisasi router
+export default function LoginPage() {
+    const router = useRouter();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); // 3. Biar halaman nggak nge-refresh
-        // Nanti di sini tempat cek email & password
-        router.push("/pos"); // 4. Pindah ke halaman POS
+    const handleLogin = (e) => {
+        e.preventDefault();
+        // Cek simpel: kalau diisi apa saja, boleh masuk ke POS
+        if (email && password) {
+            router.push('/pos');
+        } else {
+            alert("Silakan isi email dan password terlebih dahulu!");
+        }
     };
 
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4">
-            <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="bg-emerald-600 p-6 text-white text-center">
-                    <h1 className="text-2xl font-bold mb-1">Inclothes POS</h1>
-                    <p className="text-emerald-100 text-sm italic">
-                        "Berperilaku jujur adalah kunci keberkahan dalam berniaga."
-                    </p>
+            <div className="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+
+                {/* Header Hijau */}
+                <div className="bg-emerald-600 p-8 text-center text-white">
+                    <h1 className="text-3xl font-bold mb-2">Inclothes POS</h1>
+                    <p className="italic text-sm opacity-90">"Berperilaku jujur adalah kunci keberkahan dalam berniaga."</p>
                 </div>
 
                 <div className="p-8">
-                    <div className="mb-8 text-center">
-                        <h2 className="text-xl font-semibold text-slate-800">Selamat Datang</h2>
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl font-bold text-slate-800">Selamat Datang</h2>
                         <p className="text-slate-500 text-sm">Silahkan masuk untuk mengelola amanah hari ini</p>
                     </div>
 
-                    {/* 5. Tambahkan onSubmit di sini */}
-                    <form className="space-y-5" onSubmit={handleSubmit}>
+                    <form onSubmit={handleLogin} className="space-y-5">
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">Email / Username</label>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Email / Username</label>
                             <input
                                 type="text"
-                                required
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
-                                placeholder="Masukkan email Anda"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-emerald-500 bg-yellow-50/30"
+                                placeholder="alifakhoiriyah375@gmail.com"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">Password</label>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Password</label>
                             <input
                                 type="password"
-                                required
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
-                                placeholder="••••••••"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-emerald-500 bg-yellow-50/30"
+                                placeholder="••••••••••••"
                             />
-                        </div>
-
-                        <div className="flex items-center justify-between text-sm">
-                            <label className="flex items-center text-slate-600 cursor-pointer">
-                                <input type="checkbox" className="mr-2 rounded text-emerald-600 focus:ring-emerald-500" />
-                                Ingat saya
-                            </label>
-                            <a href="#" className="text-emerald-600 hover:underline">Lupa Password?</a>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-200"
+                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition-all shadow-lg mt-2"
                         >
-                            MASUK
+                            Masuk (Bismillah)
                         </button>
                     </form>
 
-                    <div className="mt-8 p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg">
-                        <h3 className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-1">Pengingat Shiddiq (Kejujuran)</h3>
-                        <p className="text-xs text-emerald-700 leading-relaxed">
-                            Rasulullah SAW bersabda: "Pedagang yang jujur dan terpercaya akan bersama para Nabi, orang-orang shiddiq, dan para syuhada." (HR. Tirmidzi)
+                    {/* TOMBOL KE REGISTER - PASTIKAN SEPERTI INI */}
+                    <div className="text-center mt-6 pt-6 border-t border-slate-100">
+                        <p className="text-sm text-slate-600">
+                            Belum punya akun?{' '}
+                            <Link href="/register" className="text-emerald-600 font-bold hover:underline cursor-pointer">
+                                Daftar di sini
+                            </Link>
                         </p>
                     </div>
                 </div>
             </div>
-            <p className="mt-6 text-slate-400 text-xs">© 2026 Inclothes - Sistem Informasi Akuntansi Syariah</p>
         </div>
     );
 }
