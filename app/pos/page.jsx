@@ -5,56 +5,13 @@ export default function POSPage() {
     const [cart, setCart] = useState([]);
 
     const products = [
-        {
-            id: 1,
-            name: 'Gamis Silk Premium',
-            price: 350000,
-            color: 'Authentic Madinah',
-            image: '/image_5cce2f.png' // Gambar pertama (Gamis Biru Muda)
-        },
-        {
-            id: 2,
-            name: 'Koko Kurta Modern',
-            price: 225000,
-            color: 'Himalayan White',
-            image: '/image_5ccec9.png' // Gambar kedua (Koko Putih)
-        },
-        {
-            id: 3,
-            name: 'Abaya Jetblack Sharia',
-            price: 450000,
-            color: 'Deep Black',
-            image: '/image_5cd1e8.png' // Gambar ketiga (Abaya Hitam)
-        },
-        {
-            id: 4,
-            name: 'Pashmina Silk Soft',
-            price: 85000,
-            color: 'Dusty Rose',
-            image: '/image_5cd266.png' // Gambar keempat (Pashmina Hijau Sage)
-        },
-        {
-            id: 5,
-            name: 'Mukenah Travel Set',
-            price: 150000,
-            color: 'Emerald Green',
-            image: '/image_5cd2e7.png' // Gambar kelima (Mukenah Motif)
-        },
-        {
-            id: 6,
-            name: 'Khimar Syar\'i Layer',
-            price: 110000,
-            color: 'Soft Lavender',
-            image: '/image_5cd5ce.png' // Gambar ketujuh (Khimar Hijau Army)
-        },
+        { id: 1, name: 'Gamis Silk Premium', price: 350000, color: 'Authentic Madinah', image: '/gamis.png' },
+        { id: 2, name: 'Koko Kurta Modern', price: 225000, color: 'Himalayan White', image: '/koko.png' },
+        { id: 3, name: 'Abaya Jetblack Sharia', price: 450000, color: 'Deep Black', image: '/abaya.png' },
+        { id: 4, name: 'Pashmina Silk Soft', price: 85000, color: 'Dusty Rose', image: '/pashmina.png' },
+        { id: 5, name: 'Mukenah Travel Set', price: 150000, color: 'Emerald Green', image: '/mukena.png' },
+        { id: 6, name: 'Khimar Syar\'i Layer', price: 110000, color: 'Soft Lavender', image: '/khimar.png' },
     ];
-
-    const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
-    const zakat = subtotal * 0.025;
-
-    const addToCart = (product) => {
-        setCart([...cart, product]);
-    };
 
     return (
         <div className="flex h-screen bg-[#F8FAFC]">
