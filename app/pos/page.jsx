@@ -5,12 +5,48 @@ export default function POSPage() {
     const [cart, setCart] = useState([]);
 
     const products = [
-        { id: 1, name: 'Gamis Silk Premium', price: 350000, color: 'Authentic Madinah', image: 'https://images.unsplash.com/photo-1564859228273-274232fdb516?q=80&w=400' },
-        { id: 2, name: 'Koko Kurta Modern', price: 225000, color: 'Himalayan White', image: 'https://images.unsplash.com/photo-1624313503191-494b29c9cc74?q=80&w=400' },
-        { id: 3, name: 'Abaya Jetblack Sharia', price: 450000, color: 'Deep Black', image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400' },
-        { id: 4, name: 'Pashmina Silk Soft', price: 85000, color: 'Dusty Rose', image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=400' },
-        { id: 5, name: 'Mukenah Travel Set', price: 150000, color: 'Emerald Green', image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=400' },
-        { id: 6, name: 'Khimar Syar\'i Layer', price: 110000, color: 'Soft Lavender', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400' },
+        {
+            id: 1,
+            name: 'Gamis Silk Premium',
+            price: 350000,
+            color: 'Authentic Madinah',
+            image: 'https://images.unsplash.com/photo-1585218356055-e1bbc5891162?q=80&w=400' // Gambar Gamis/Dress
+        },
+        {
+            id: 2,
+            name: 'Koko Kurta Modern',
+            price: 225000,
+            color: 'Himalayan White',
+            image: 'https://images.unsplash.com/photo-1618354691792-d1d42acfd860?q=80&w=400' // Gambar Baju Pria/Kurta
+        },
+        {
+            id: 3,
+            name: 'Abaya Jetblack Sharia',
+            price: 450000,
+            color: 'Deep Black',
+            image: 'https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=400' // Gambar Abaya Hitam
+        },
+        {
+            id: 4,
+            name: 'Pashmina Silk Soft',
+            price: 85000,
+            color: 'Dusty Rose',
+            image: 'https://images.unsplash.com/photo-1618354691229-88d47f285158?q=80&w=400' // Gambar Scarf/Pashmina
+        },
+        {
+            id: 5,
+            name: 'Mukenah Travel Set',
+            price: 150000,
+            color: 'Emerald Green',
+            image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400' // Gambar Mukenah/White Dress
+        },
+        {
+            id: 6,
+            name: 'Khimar Syar\'i Layer',
+            price: 110000,
+            color: 'Soft Lavender',
+            image: 'https://images.unsplash.com/photo-1550995694-3f5f4a7b1bd2?q=80&w=400' // Gambar Hijab
+        },
     ];
 
     const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
